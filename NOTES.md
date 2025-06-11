@@ -15,3 +15,6 @@
 17:00 Take a break for dinner
 20:15 Resume, implement milestone 1
 21:15 Milestone 2
+21:25 Milestone 3
+21:30 Milestone 4 and 2 HOUR MARK REACHED
+21:40 Milestone 5
