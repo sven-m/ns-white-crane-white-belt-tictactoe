@@ -1,4 +1,4 @@
-import { TicTacToeGame } from '../src/main';
+import { TicTacToeGame, TicTacToeBot } from '../src/main';
 
 describe('Starting a new game', () => {
   test('The board starts empty', () => {
@@ -100,3 +100,14 @@ describe('A game can end with a draw', () => {
     expect(game.status).toStrictEqual('draw');
   });
 });
+
+describe('Bots', () => {
+  test('A bot can play a game by picking an unplayed square', () => {
+    const game = new TicTacToeGame()
+    const bot = new TicTacToeBot()
+
+    bot.play(game)
+
+    expect(game.status).not.toBe('playing')
+  })
+})

@@ -19,3 +19,6 @@ Stories
 
 5. A game can end with a draw
   - A board filled with Xs and Os and no lines is a draw
+
+6. Bots
+  - A bot can play a game by picking an unplayed square
