@@ -30,7 +30,7 @@ x| |
   });
 });
 
-describe('Player X can win', () => {
+describe('Player X can win with a vertical line', () => {
   test('Players\' turns must alternate', () => {
     const game = new TicTacToeGame();
     game.play('topleft');
@@ -53,7 +53,7 @@ describe('Player X can win', () => {
   });
 });
 
-describe('Player O can win', () => {
+describe('Player O can win with a horizontal line', () => {
   test('A horizontal line of 3 Os is a win for player O', () => {
     const game = new TicTacToeGame();
     game.play('topleft');
@@ -67,3 +67,15 @@ describe('Player O can win', () => {
   });
 });
 
+describe('Player X can win with a diagonal line', () => {
+  test('A horizontal line of 3 Xs is a win for player X', () => {
+    const game = new TicTacToeGame();
+    game.play('topleft');
+    game.play('left');
+    game.play('center');
+    game.play('bottomleft');
+    game.play('bottomright');
+
+    expect(game.status).toStrictEqual({ winner: 'x' });
+  });
+});

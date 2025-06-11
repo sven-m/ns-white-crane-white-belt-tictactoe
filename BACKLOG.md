@@ -13,3 +13,6 @@ Stories
 
 3. Player O can win with a horizontal line
   - A horizontal line of 3 Os is a win for player O
+
+4. Player X can win with a diagonal line
+  - A diagonal line of 3 Xs is a win for player X
