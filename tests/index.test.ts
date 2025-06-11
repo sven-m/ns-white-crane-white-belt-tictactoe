@@ -52,3 +52,18 @@ describe('Player X can win', () => {
     expect(game.status).toStrictEqual({ winner: 'x' });
   });
 });
+
+describe('Player O can win', () => {
+  test('A horizontal line of 3 Os is a win for player O', () => {
+    const game = new TicTacToeGame();
+    game.play('topleft');
+    game.play('left');
+    game.play('topright');
+    game.play('center');
+    game.play('bottomleft');
+    game.play('right');
+
+    expect(game.status).toStrictEqual({ winner: 'o' });
+  });
+});
+
