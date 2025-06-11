@@ -66,6 +66,10 @@ ${this._board.bottomleft}|${this._board.bottom}|${this._board.bottomright}
       ['topleft', 'left', 'bottomleft'],
       ['top', 'center', 'bottom'],
       ['topright', 'right', 'bottomright'],
+
+      ['topleft', 'top', 'topright'],
+      ['left', 'center', 'right'],
+      ['bottomleft', 'bottom', 'bottomright'],
     ]
 
     for (const line of lines) {
