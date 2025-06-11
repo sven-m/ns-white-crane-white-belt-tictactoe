@@ -37,6 +37,10 @@ describe('Player X can win', () => {
     expect(game.currentPlayer).toBe('o');
   });
 
+  test('If no vertical line of 3 Xs has been drawn the game is still ongoing', () => {
+    expect(new TicTacToeGame().status).toBe('playing');
+  });
+
   test('A vertical line of 3 Xs is a win for player X', () => {
     const game = new TicTacToeGame();
     game.play('topleft');
@@ -45,6 +49,6 @@ describe('Player X can win', () => {
     game.play('bottomright');
     game.play('bottomleft');
 
-    expect(game.status).toStrictEqual({ winner: 'x' })
+    expect(game.status).toStrictEqual({ winner: 'x' });
   });
 });
