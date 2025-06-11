@@ -36,4 +36,15 @@ describe('Player X can win', () => {
     game.play('topleft');
     expect(game.currentPlayer).toBe('o');
   });
+
+  test('A vertical line of 3 Xs is a win for player X', () => {
+    const game = new TicTacToeGame();
+    game.play('topleft');
+    game.play('center');
+    game.play('left');
+    game.play('bottomright');
+    game.play('bottomleft');
+
+    expect(game.status).toBe({ winner: 'x' })
+  });
 });
