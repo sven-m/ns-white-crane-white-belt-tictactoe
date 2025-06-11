@@ -1,6 +1,12 @@
-export function sum(a: number, b: number): number {
-  return a + b;
-}
+export class TicTacToeGame {
 
-console.log("Run 'npm run update-kata' from the commandline" +
-" and you will see this message in the console.");
+  get board(): string {
+    return `
+     | | 
+    -+-+-
+     | | 
+    -+-+-
+     | | 
+    `
+  }
+};
