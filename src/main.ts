@@ -15,7 +15,7 @@ export type Cell = (
 export type Winner = {
   winner: Player;
 }
-export type Status = 'playing' | Winner;
+export type Status = 'playing' | Winner | 'draw';
 
 type Board = {
   [k in Cell]: string;
@@ -87,6 +87,11 @@ ${this._board.bottomleft}|${this._board.bottom}|${this._board.bottomright}
       }
     }
 
-    return 'playing';
+    const unplayedSquares = Object
+      .keys(this._board)
+      .filter((key) => this._board[key as keyof Board] == ' ')
+      .length
+
+    return unplayedSquares > 0 ? 'playing' : 'draw';
   }
 };
