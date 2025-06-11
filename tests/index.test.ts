@@ -79,3 +79,24 @@ describe('Player X can win with a diagonal line', () => {
     expect(game.status).toStrictEqual({ winner: 'x' });
   });
 });
+
+describe('A game can end with a draw', () => {
+  test('A board filled with Xs and Os and no lines is a draw', () => {
+    const game = new TicTacToeGame();
+    game.play('topleft');
+    game.play('bottomright');
+
+    game.play('bottomleft');
+    game.play('left');
+
+    game.play('right');
+    game.play('top');
+
+    game.play('topright');
+    game.play('center');
+
+    game.play('bottom');
+
+    expect(game.status).toStrictEqual('draw');
+  });
+});

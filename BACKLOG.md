@@ -16,3 +16,6 @@ Stories
 
 4. Player X can win with a diagonal line
   - A diagonal line of 3 Xs is a win for player X
+
+5. A game can end with a draw
+  - A board filled with Xs and Os and no lines is a draw
