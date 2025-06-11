@@ -14,3 +14,4 @@
 16:45 Resume
 17:00 Take a break for dinner
 20:15 Resume, implement milestone 1
+21:15 Milestone 2
