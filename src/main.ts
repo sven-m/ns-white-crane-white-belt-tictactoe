@@ -53,12 +53,12 @@ export class TicTacToeGame {
 
   get board(): string {
     return `
-    ${this._board.topleft}|${this._board.top}|${this._board.topright}
-    -+-+-
-    ${this._board.left}|${this._board.center}|${this._board.right}
-    -+-+-
-    ${this._board.bottomleft}|${this._board.bottom}|${this._board.bottomright}
-    `;
+${this._board.topleft}|${this._board.top}|${this._board.topright}
+-+-+-
+${this._board.left}|${this._board.center}|${this._board.right}
+-+-+-
+${this._board.bottomleft}|${this._board.bottom}|${this._board.bottomright}
+`;
   }
 
   get status(): Status {
