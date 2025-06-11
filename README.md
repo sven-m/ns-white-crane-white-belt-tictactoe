@@ -1,6 +1,6 @@
 ## README
 
-A story about your amazing kata exercise here.
+A Tic Tac Toe game to be created.
 
 # Useful commands in this project:
 - `npm run help` - see useful commands.
