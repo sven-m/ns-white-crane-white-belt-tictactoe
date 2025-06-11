@@ -22,3 +22,6 @@ Stories
 
 6. Bots
   - A bot can play a game by picking an unplayed square
+
+7. Rules
+  - A cell cannot be played more than once

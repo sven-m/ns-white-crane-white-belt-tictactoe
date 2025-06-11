@@ -4,9 +4,9 @@
 
 ⚠️ TODO
 
-- Enforce rules
-
 🚧 WIP
+
+- Enforce rules
 
 🅿️ PARKED
 

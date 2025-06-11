@@ -111,3 +111,11 @@ describe('Bots', () => {
     expect(game.status).not.toBe('playing')
   })
 })
+
+describe('Enforce rules', () => {
+  test('A cell cannot be played more than once', () => {
+    const game = new TicTacToeGame()
+    game.play('topleft');
+    expect(() => game.play('topleft')).toThrow()
+  })
+});
