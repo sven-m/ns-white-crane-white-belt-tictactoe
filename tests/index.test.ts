@@ -68,7 +68,7 @@ describe('Player O can win with a horizontal line', () => {
 });
 
 describe('Player X can win with a diagonal line', () => {
-  test('A horizontal line of 3 Xs is a win for player X', () => {
+  test('A horizontal line of 3 Xs is a win for player X', async () => {
     const game = new TicTacToeGame();
     game.play('topleft');
     game.play('left');
@@ -102,11 +102,11 @@ describe('A game can end with a draw', () => {
 });
 
 describe('Bots', () => {
-  test('A bot can play a game by picking an unplayed square', () => {
+  test('A bot can play a game by picking an unplayed square', async () => {
     const game = new TicTacToeGame()
-    const bot = new TicTacToeBot()
+    const bot = new TicTacToeBot(() => Promise.resolve())
 
-    bot.play(game)
+    await bot.play(game)
 
     expect(game.status).not.toBe('playing')
   })

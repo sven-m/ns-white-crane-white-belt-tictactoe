@@ -61,6 +61,13 @@ ${this._board.bottomleft}|${this._board.bottom}|${this._board.bottomright}
 `;
   }
 
+  get unplayedCells(): Cell[] {
+    const cells = Object
+      .keys(this._board)
+      .filter((key) => this._board[key as Cell] == ' ')
+    return cells as Cell[]
+  }
+
   get status(): Status {
     const lines: Cell[][] = [
       ['topleft', 'left', 'bottomleft'],
@@ -87,11 +94,37 @@ ${this._board.bottomleft}|${this._board.bottom}|${this._board.bottomright}
       }
     }
 
-    const unplayedSquares = Object
-      .keys(this._board)
-      .filter((key) => this._board[key as keyof Board] == ' ')
-      .length
-
-    return unplayedSquares > 0 ? 'playing' : 'draw';
+    return this.unplayedCells.length > 0 ? 'playing' : 'draw';
   }
 };
+
+export class TicTacToeBot {
+  private _delay: () => Promise<void>;
+
+  constructor(delay: () => Promise<void> = () => new Promise(resolve => setTimeout(resolve, 2000))) {
+    this._delay = delay
+  }
+
+  async play(game: TicTacToeGame) {
+    console.log(game.board)
+
+    while (game.status == 'playing') {
+      const unplayedCells = game.unplayedCells
+      const randomIndex = Math.floor(Math.random() * unplayedCells.length)
+      const cell = unplayedCells[randomIndex]
+
+      await this._delay()
+      game.play(cell)
+      console.log(game.board)
+    }
+
+    console.log(game.status)
+  }
+}
+
+if (require.main === module) {
+  const game = new TicTacToeGame()
+  const bot = new TicTacToeBot()
+
+  bot.play(game)
+}
