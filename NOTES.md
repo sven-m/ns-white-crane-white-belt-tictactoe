@@ -1,7 +1,10 @@
 ✅ DONE
 
+- All milestones, but I am only testing some win scenarios, not all of them.
 
 ⚠️ TODO
+
+- Enforce rules
 
 🚧 WIP
 
