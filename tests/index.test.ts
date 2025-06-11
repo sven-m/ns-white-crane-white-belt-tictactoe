@@ -11,4 +11,8 @@ describe('Starting a new game', () => {
     `);
   });
 
+  test('The first player is X', () => {
+    expect(new TicTacToeGame().currentPlayer).toBe('x');
+  })
+
 });
