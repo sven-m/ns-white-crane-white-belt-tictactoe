@@ -12,9 +12,15 @@ export type Cell = (
   | 'bottomright'
 );
 
+export type Winner = {
+  winner: Player;
+}
+export type Status = 'playing' | Winner;
+
 type Board = {
   [k in Cell]: string;
 };
+
 
 export class TicTacToeGame {
   private _currentPlayer: Player;
@@ -53,5 +59,27 @@ export class TicTacToeGame {
     -+-+-
     ${this._board.bottomleft}|${this._board.bottom}|${this._board.bottomright}
     `;
+  }
+
+  get status(): Status {
+    const lines: Cell[][] = [
+      ['topleft', 'left', 'bottomleft'],
+      ['top', 'center', 'bottom'],
+      ['topright', 'right', 'bottomright'],
+    ]
+
+    for (const line of lines) {
+      const lineString = line.map((cell) => this._board[cell]).join('')
+
+      if (lineString === 'xxx') {
+        return { winner: 'x' }
+      }
+
+      if (lineString === 'ooo') {
+        return { winner: 'o' }
+      }
+    }
+
+    return 'playing';
   }
 };

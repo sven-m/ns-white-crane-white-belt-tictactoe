@@ -45,6 +45,6 @@ describe('Player X can win', () => {
     game.play('bottomright');
     game.play('bottomleft');
 
-    expect(game.status).toBe({ winner: 'x' })
+    expect(game.status).toStrictEqual({ winner: 'x' })
   });
 });
