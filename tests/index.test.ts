@@ -15,4 +15,17 @@ describe('Starting a new game', () => {
     expect(new TicTacToeGame().currentPlayer).toBe('x');
   })
 
+  test('The first square played will become an X', () => {
+    const game = new TicTacToeGame()
+
+    game.play('topleft');
+
+    expect(game.board).toBe(`
+    x| | 
+    -+-+-
+     | | 
+    -+-+-
+     | | 
+    `)
+  })
 });
