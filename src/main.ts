@@ -46,6 +46,10 @@ export class TicTacToeGame {
   }
 
   play(cell: Cell) {
+    if (this._board[cell] !== ' ') {
+      throw new Error(`Cell at ${cell} already played by player ${this._board[cell]}!`)
+    }
+
     this._board[cell] = this.currentPlayer;
 
     this._currentPlayer = this.currentPlayer == 'x' ? 'o' : 'x';
