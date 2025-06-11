@@ -1,4 +1,4 @@
-export type Player = 'x';
+export type Player = 'x' | 'o';
 
 export type Cell = (
   'topleft'
@@ -41,6 +41,8 @@ export class TicTacToeGame {
 
   play(cell: Cell) {
     this._board[cell] = this.currentPlayer;
+
+    this._currentPlayer = this.currentPlayer == 'x' ? 'o' : 'x';
   }
 
   get board(): string {
